@@ -25,7 +25,7 @@ def predict(image):
     with torch.no_grad():
         outputs = model(image)
         _, predicted = torch.max(outputs, 1)
-    return "Gato" if predicted.item() == 0 else "Perro"
+    return "GATO" if predicted.item() == 0 else "PERRO"
 
 # Interfaz de Streamlit
 st.title('Clasificador de gatos y perros')
@@ -37,4 +37,4 @@ if uploaded_file is not None:
     st.write("")
     st.write("Clasificando...")
     label = predict(image)
-    st.write(f"Esta imagen es de un: {label}")
+    st.write(f"Esta imagen es de un:\n {label}")
