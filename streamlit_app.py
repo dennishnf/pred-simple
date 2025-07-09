@@ -37,4 +37,5 @@ if uploaded_file is not None:
     st.write("")
     st.write("Clasificando...")
     label = predict(image)
-    st.write(f"Esta imagen es de un: {label}")
+    st.write(f"Esta imagen es de un:")
+    st.write(f"{label}")
