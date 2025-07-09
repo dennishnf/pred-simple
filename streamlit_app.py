@@ -9,6 +9,7 @@ num_ftrs = model.fc.in_features
 model.fc = torch.nn.Linear(num_ftrs, 2)
 model.load_state_dict(torch.load('modelo-pesos.pth', map_location=torch.device('cpu')))
 
+# Modelo en modo evaluación
 model.eval()
 
 # Definir las transformaciones para las imágenes
@@ -25,9 +26,8 @@ def predict(image):
         outputs = model(image)
         _, predicted = torch.max(outputs, 1)
 
-        if predicted.item() == 0: return "GATOO"
-        if predicted.item() == 1: return "PERROO"
-    #return "GATO" if predicted.item() == 0 else "PERRO"
+        if predicted.item() == 0: return "GATO"
+        if predicted.item() == 1: return "PERRO"
 
 # Interfaz de Streamlit
 st.title('Clasificador de gatos y perros')
