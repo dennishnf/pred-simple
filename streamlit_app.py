@@ -7,7 +7,6 @@ from PIL import Image
 model = models.resnet18(pretrained=False)
 num_ftrs = model.fc.in_features
 model.fc = torch.nn.Linear(num_ftrs, 2)
-#model.load_state_dict(torch.load('cat_dog_classifier.pth'))
 model.load_state_dict(torch.load('cat_dog_classifier.pth', map_location=torch.device('cpu')))
 
 model.eval()
