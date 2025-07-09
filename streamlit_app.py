@@ -32,7 +32,6 @@ uploaded_file = st.file_uploader("Elija una imagen...", type="jpg")
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption='Imagen subida', width=400)
-    #st.write("")
     st.write("Clasificando...")
     label = predict(image)
     st.write(f"Esta imagen es de un: {label}")
