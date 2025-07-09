@@ -1,6 +1,6 @@
 # Basic example
 
-A simple Streamlit app showing the GDP of different countries in the world.
+A simple Streamlit app.
 
 [Open here](https://pred-simple-web.streamlit.app/)
 
